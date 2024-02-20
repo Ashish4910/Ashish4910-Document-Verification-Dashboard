@@ -1,0 +1,190 @@
+@charset "ISO-8859-1";
+
+body {
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+}
+
+/* Logo and Other Details */
+nav {
+	/* padding: 0.5rem 0; */
+	margin-left: -230px;
+	margin-bottom: 0;
+	background-color: white;
+}
+
+.logo-img {
+	margin-right: 30px;
+	width: 190px;
+	height: 50px;
+}
+
+.dashboard-heading {
+	padding-right: 480px;
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.login-container {
+	display: flex;
+	align-items: center;
+	position: absolute;
+	top: 15px;
+	font-size: 13px;
+	right: 30px;
+}
+
+.logged-in-as {
+	margin-right: 5px;
+	margin-top: 3px;
+}
+
+.user-info {
+	color: black;
+	margin-top: 3px;
+	font-weight: bold;
+	font-size: 13px;
+}
+
+.logout-button {
+	color: black;
+	background-color: white;
+	border-color: white;
+	font-weight: bold;
+	font-size: 13px;
+	margin-top: 3px;
+}
+
+.logout-icon {
+	color: black;
+}
+
+.dashboard-button {
+	color: black;
+	background-color: white;
+	border-color: white;
+	font-weight: bold;
+	font-size: 13px;
+}
+
+.button1-style {
+	margin-top: -142px;
+	margin-left: 692px;
+}
+
+.button2-style {
+	margin-top: -190px;
+	margin-left: 780px;
+}
+
+.button3-style {
+	margin-top: -239px;
+	margin-left: 883px;
+}
+
+.container-logo {
+	display: flex;
+	justify-content: between;
+	align-items: center;
+}
+
+.navbar-brand img {
+	margin-right: 30px;
+}
+
+.title {
+	padding-right: 470px;
+	font-size: 25px;
+	font-weight: bold;
+}
+
+/* Buttons */
+.btn-custom {
+	color: black;
+	background-color: white;
+	border-color: white;
+	font-weight: bold;
+	font-size: 13px;
+}
+
+/* Table */
+.container-table {
+	margin-top: 20px;
+}
+
+.table th, .table td {
+	text-align: center;
+}
+
+.upload-button, .download-button {
+	text-align: center;
+}
+
+/* Logout Section */
+.logged-in-section {
+	display: flex;
+	align-items: center;
+	position: absolute;
+	top: 15px;
+	right: 10px;
+}
+
+.btn-secondary {
+	background-color: #f37e20;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+	margin: 20px, auto;
+	margin-right: 10px;
+	margin-top: -50px;
+}
+
+th, td {
+	border: 1px solid #333333;
+	padding: 8px;
+	text-align: center;
+}
+
+th {
+	background-color: #f2f2f2;
+}
+
+/* Table */
+.container-table {
+	margin-top: 20px;
+}
+
+.table th, .table td {
+	text-align: center;
+}
+
+.upload-button, .download-button {
+	text-align: center;
+}
+
+.upload-button {
+	text-align: center;
+}
+
+.download-button {
+	text-align: center;
+}
+
+.upload-label {
+	cursor: pointer;
+}
+
+.upload-input {
+	display: none;
+}
+
+.submit-link {
+	text-decoration: none;
+	color: white;
+}
+
+.submit-link:hover {
+	text-decoration: underline;
+}

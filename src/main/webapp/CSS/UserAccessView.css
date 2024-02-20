@@ -1,0 +1,146 @@
+@charset "ISO-8859-1";
+
+
+body {
+	font-family: Arial, sans-serif;
+
+}
+
+/* Logo and Other Details */
+nav {
+	padding: 0.5rem 0;
+	margin-left: -230px;
+	margin-bottom: 0;
+	background-color: white;
+}
+
+.logo-img {
+	margin-right: 30px;
+	width: 190px;
+	height: 50px;
+}
+
+.dashboard-heading {
+	padding-right: 470px;
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.login-container {
+	display: flex;
+	align-items: center;
+	position: absolute;
+	top: 15px;
+	font-size: 13px;
+	right: 10px;
+}
+
+.logged-in-as {
+	margin-right: 5px;
+	margin-top: 3px;
+}
+
+.user-info {
+	color: black;
+	margin-top: 3px;
+	font-weight: bold;
+	font-size: 13px;
+}
+
+.logout-button {
+	color: black;
+	background-color: white;
+	border-color: white;
+	font-weight: bold;
+	font-size: 13px;
+	margin-top: 3px;
+}
+
+.logout-icon {
+	color: black;
+}
+
+.dashboard-button {
+	color: black;
+	background-color: white;
+	border-color: white;
+	font-weight: bold;
+	font-size: 13px;
+}
+
+.button1-style {
+	margin-top: -142px;
+	margin-left: 692px;
+}
+
+.button2-style {
+	margin-top: -190px;
+	margin-left: 780px;
+}
+
+.button3-style {
+	margin-top: -239px;
+	margin-left: 883px;
+}
+
+.container-logo {
+	display: flex;
+	justify-content: between;
+	align-items: center;
+}
+
+.navbar-brand img {
+	margin-right: 30px;
+}
+
+.title {
+	padding-right: 470px;
+	font-size: 25px;
+	font-weight: bold;
+}
+
+/* Logout Section */
+.logged-in-section {
+	display: flex;
+	align-items: center;
+	position: absolute;
+	top: 15px;
+	right: 10px;
+}
+
+
+/* Container for the entire table */
+.table-container {
+	max-height: 300px;
+	overflow-y: scroll;
+}
+
+/* Optional: Adjustments for table layout */
+.Container {
+	width: 80%;
+	margin-left: 200px;
+	border-collapse: collapse;
+}
+
+.Container th {
+	padding: 8px;
+	border: 2px solid #000000;
+	/* Adjust border styles as needed */
+	text-align: left;
+	background-color: #f2f2f2;
+	/* Set header background color as needed */
+}
+
+.Container td {
+	padding: 8px;
+	border: 1px solid #000000;
+	/* Adjust border styles as needed */
+	text-align: left;
+
+}
+
+/* Disabled button styles */
+.action-button:disabled {
+	background-color: #000000;
+	cursor: not-allowed;
+}

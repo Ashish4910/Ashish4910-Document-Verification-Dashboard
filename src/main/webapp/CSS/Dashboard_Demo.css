@@ -1,0 +1,324 @@
+.brand-container {
+	margin-left: 0px;
+}
+
+.btn.btn-primary:hover {
+	background-color: #007bff;
+	/* Change this to the desired navbar color on hover */
+}
+
+.logger {
+	margin-left: 70px;
+	margin-top: 10px;
+}
+
+.upload-input {
+	display: none;
+}
+
+.table td, th {
+	text-align: center;
+}
+
+.logout-button {
+	border-bottom-width: 0px;
+	padding-bottom: 10px;
+	padding-left: 0px;
+	padding-top: 0px;
+	border-top-width: 0px;
+	margin-left: 5px;
+	padding-right: 0px;
+}
+
+.brand-image {
+	margin-left: 0px;
+}
+
+.img-responsive {
+	width: 170px;
+}
+
+.dashboard-heading {
+	font-weight: bold;
+	margin-top: 10px;
+	display: inline-flex;
+	font-size: 20px;
+}
+
+/* nav div  */
+.custom-div-brand-1 {
+	width: 34%;
+}
+
+.custom-div-brand-2 {
+	width: 66%;
+}
+
+.logger-Dashboard {
+	font-weight: 700 !important;
+}
+
+.logger-Authorization {
+	font-weight: 700 !important;
+}
+
+.logger-Access {
+	font-weight: 700 !important;
+}
+
+@media ( min-width : 576px) {
+	.brand-container {
+		margin-left: 0px;
+	}
+	.btn.btn-primary:hover {
+		background-color: #007bff;
+		/* Change this to the desired navbar color on hover */
+	}
+	.logger {
+		margin-left: 70px;
+		margin-top: 10px;
+	}
+	.upload-input {
+		display: none;
+	}
+	.table td, th {
+		text-align: center;
+	}
+	.logout-button {
+		border-bottom-width: 0px;
+		padding-bottom: 10px;
+		padding-left: 0px;
+		padding-top: 0px;
+		border-top-width: 0px;
+		margin-left: 5px;
+		padding-right: 0px;
+	}
+	.brand-image {
+		margin-left: 0px;
+	}
+	.img-responsive {
+		width: 170px;
+	}
+	.dashboard-heading {
+		font-weight: bold;
+		margin-top: 10px;
+		display: inline-flex;
+		font-size: 20px;
+	}
+}
+
+/* @media ( min-width : 768px) {
+	.brand-container {
+		margin-left: 0px;
+	}
+	.btn.btn-primary:hover {
+		background-color: #007bff;
+		Change this to the desired navbar color on hover
+	}
+	.logger {
+		margin-left: 70px;
+		margin-top: 10px;
+	}
+	.upload-input {
+		display: none;
+	}
+	.table td, th {
+		text-align: center;
+	}
+	.logout-button {
+		border-bottom-width: 0px;
+		padding-bottom: 10px;
+		padding-left: 0px;
+		padding-top: 0px;
+		border-top-width: 0px;
+		margin-left: 5px;
+		padding-right: 0px;
+	}
+	.brand-image {
+		margin-left: 0px;
+	}
+	.img-responsive {
+		width: 170px;
+	}
+	.dashboard-heading {
+		font-weight: bold;
+		margin-top: 10px;
+		display: inline-flex;
+		font-size: 20px;
+	}
+} */
+@media ( min-width : 992px) {
+	.brand-container {
+		margin-left: 0px;
+	}
+	.btn.btn-primary:hover {
+		background-color: #007bff;
+		/* Change this to the desired navbar color on hover */
+	}
+	.logger {
+		margin-left: 70px;
+		margin-top: 10px;
+	}
+	.upload-input {
+		display: none;
+	}
+	.table td, th {
+		text-align: center;
+	}
+	.logout-button {
+		border-bottom-width: 0px;
+		padding-bottom: 10px;
+		padding-left: 0px;
+		padding-top: 0px;
+		border-top-width: 0px;
+		margin-left: 5px;
+		padding-right: 0px;
+	}
+	.brand-image {
+		margin-left: 0px;
+	}
+	.img-responsive {
+		width: 170px;
+	}
+	.dashboard-heading {
+		font-weight: bold;
+		margin-top: 10px;
+		display: inline-flex;
+		font-size: 20px;
+	}
+}
+
+@media ( min-width : 1200px) {
+	.brand-container {
+		margin-left: 0px;
+	}
+	.btn.btn-primary:hover {
+		background-color: #007bff;
+		/* Change this to the desired navbar color on hover */
+	}
+	.logger {
+		margin-left: 70px;
+		margin-top: 10px;
+	}
+	.upload-input {
+		display: none;
+	}
+	.table td, th {
+		text-align: center;
+	}
+	.logout-button {
+		border-bottom-width: 0px;
+		padding-bottom: 10px;
+		padding-left: 0px;
+		padding-top: 0px;
+		border-top-width: 0px;
+		margin-left: 5px;
+		padding-right: 0px;
+	}
+	.brand-image {
+		margin-left: 0px;
+	}
+	.img-responsive {
+		width: 170px;
+	}
+	.dashboard-heading {
+		font-weight: bold;
+		margin-top: 10px;
+		display: inline-flex;
+		font-size: 20px;
+	}
+}
+
+@media ( min-width : 1400px) {
+	.brand-container {
+		margin-left: 0px;
+	}
+	.btn.btn-primary:hover {
+		background-color: #007bff;
+		/* Change this to the desired navbar color on hover */
+	}
+	.logger {
+		margin-left: 70px;
+		margin-top: 10px;
+	}
+	.upload-input {
+		display: none;
+	}
+	.table td, th {
+		text-align: center;
+	}
+	.logout-button {
+		border-bottom-width: 0px;
+		padding-bottom: 10px;
+		padding-left: 0px;
+		padding-top: 0px;
+		border-top-width: 0px;
+		margin-left: 5px;
+		padding-right: 0px;
+	}
+	.brand-image {
+		margin-left: 0px;
+	}
+	.img-responsive {
+		width: 170px;
+	}
+	.dashboard-heading {
+		font-weight: bold;
+		margin-top: 10px;
+		display: inline-flex;
+		font-size: 20px;
+	}
+}
+
+@media ( min-width : 768px) {
+	.brand-container {
+		margin-left: 0px;
+	}
+	.btn.btn-primary:hover {
+		background-color: #007bff;
+		/* Change this to the desired navbar color on hover */
+	}
+	.logger {
+		margin-left: 70px;
+		margin-top: 10px;
+	}
+	.upload-input {
+		display: none;
+	}
+	.table td, th {
+		text-align: center;
+	}
+	.logout-button {
+		border-bottom-width: 0px;
+		padding-bottom: 10px;
+		padding-left: 0px;
+		padding-top: 0px;
+		border-top-width: 0px;
+		margin-left: 5px;
+		padding-right: 0px;
+	}
+	.brand-image {
+		margin-left: 0px;
+	}
+	.img-responsive {
+		width: 170px;
+	}
+	.dashboard-heading {
+		font-weight: bold;
+		margin-top: 10px;
+		display: inline-flex;
+		font-size: 15px;
+	}
+	.custom-div-brand-1 {
+		width: 304px;
+	}
+	.logger-Dashboard {
+		font-weight: 700 !important;
+	}
+	.logger-Authorization {
+		font-weight: 700 !important;
+	}
+	.logger-Access {
+		font-weight: 700 !important;
+	}
+}

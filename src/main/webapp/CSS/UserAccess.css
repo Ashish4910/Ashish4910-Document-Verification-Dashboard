@@ -1,0 +1,157 @@
+@charset "ISO-8859-1";
+
+body {
+	font-family: Arial, sans-serif;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
+/* Logo and Other Details */
+nav {
+	padding: 0.5rem 0;
+	margin-left: -230px;
+	margin-bottom: 0;
+	background-color: white;
+}
+
+.logo-img {
+	margin-right: 30px;
+	width: 190px;
+	height: 50px;
+}
+
+.dashboard-heading {
+	padding-right: 470px;
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.login-container {
+	display: flex;
+	align-items: center;
+	position: absolute;
+	top: 15px;
+	font-size: 13px;
+	right: 10px;
+}
+
+.logged-in-as {
+	margin-right: 5px;
+	margin-top: 3px;
+}
+
+.user-info {
+	color: black;
+	margin-top: 3px;
+	font-weight: bold;
+	font-size: 13px;
+}
+
+.logout-button {
+	color: black;
+	background-color: white;
+	border-color: white;
+	font-weight: bold;
+	font-size: 13px;
+	margin-top: 3px;
+}
+
+.logout-icon {
+	color: black;
+}
+
+.dashboard-button {
+	color: black;
+	background-color: white;
+	border-color: white;
+	font-weight: bold;
+	font-size: 13px;
+}
+
+.button1-style {
+	margin-top: -142px;
+	margin-left: 692px;
+}
+
+.button2-style {
+	margin-top: -190px;
+	margin-left: 780px;
+}
+
+.button3-style {
+	margin-top: -239px;
+	margin-left: 883px;
+}
+
+.container-logo {
+	display: flex;
+	justify-content: between;
+	align-items: center;
+}
+
+.navbar-brand img {
+	margin-right: 30px;
+}
+
+.title {
+	padding-right: 470px;
+	font-size: 25px;
+	font-weight: bold;
+}
+
+/* Logout Section */
+.logged-in-section {
+	display: flex;
+	align-items: center;
+	position: absolute;
+	top: 15px;
+	right: 10px;
+}
+
+/* Common form styles */
+.form-container {
+	max-width: 400px;
+	margin: 0 auto;
+	padding: 20px;
+	border: 1px solid #ccc;
+	background-color: #fff;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	text-align: center;
+	margin-top: -50px;
+}
+
+/* Heading styles */
+.form-heading {
+	font-size: 21px;
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+
+/* Label styles */
+.form-label {
+	display: block;
+	margin-bottom: 5px;
+	text-align: left;
+}
+
+/* Input styles */
+.form-input {
+	width: 100%;
+	padding: 8px;
+	margin-bottom: 15px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+/* Button styles */
+.form-button {
+	display: block;
+	width: 100%;
+	padding: 10px;
+	color: #fff;
+	background-color: #007bff;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	margin-top: 10px;
+}
