@@ -60,18 +60,24 @@
  %>
 <!-- =========================================TABLE============================================================== -->
 <div class="table-container">
+   <div class="table-scroll">
     <table class="table">
+    <thead class="fixed-header">
          <tr>
             <th class="text">Id</th>
             <th class="text">Batches</th>
         </tr>
+        </thead>
+         <tbody>
         <% while (rs.next()){ %>
             <tr>
                 <td class="text-center"><b><%=rs.getString("id")%></b></td>
                 <td class="text-center"><b><%=rs.getString("batch_id")%></b></td>
             </tr>
         <% } %>
+        </tbody>
     </table>
+</div>
 </div>
 <%
 } catch (Exception e) {

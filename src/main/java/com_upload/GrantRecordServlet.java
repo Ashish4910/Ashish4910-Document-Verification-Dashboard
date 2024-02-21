@@ -24,7 +24,6 @@ public class GrantRecordServlet extends HttpServlet {
             throws ServletException, IOException {
         String userId = request.getParameter("id");
         String grantAction = request.getParameter("action");
-
            
         try (Connection conn =DatabaseUtil.getConnection()) {
             if ("grant".equals(grantAction)) {
@@ -59,6 +58,7 @@ public class GrantRecordServlet extends HttpServlet {
                 try (PreparedStatement updatePstmt = conn.prepareStatement(QueryUtil.GrantRecordServlet_Update_user_access2)) {
                     updatePstmt.setString(1, userId);
                     updatePstmt.executeUpdate();
+                    System.out.println("Bye");
                 }
             }
 

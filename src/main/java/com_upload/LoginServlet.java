@@ -36,14 +36,7 @@ public class LoginServlet extends HttpServlet {
             pstmt1.setString(1, uemail);
             pstmt1.setString(2, upwd);
 
-<<<<<<< HEAD
             ResultSet rs = pstmt1.executeQuery();
-=======
-			PreparedStatement pstmt1 = con.prepareStatement(QueryUtil.LoginServlet_SELECT_USER_ACCESS_QUERY);
-			pstmt1.setString(1, uemail);
-			pstmt1.setString(2, upwd);
-			ResultSet rs = pstmt1.executeQuery();
->>>>>>> dd0f10a2010abca3d8c7edd77e8be5ed22c97a24
 
             if (rs.next()) {
                 String ntidFromDatabase = rs.getString("ntid");

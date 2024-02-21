@@ -5,9 +5,8 @@ body {
 	font-size: 16px;
 }
 
-/* Logo and Other Details */
 nav {
-	/* padding: 0.5rem 0; */
+	padding: 0.5rem 0;
 	margin-left: -230px;
 	margin-bottom: 0;
 	background-color: white;
@@ -107,20 +106,24 @@ nav {
 	font-size: 13px;
 }
 
+
 /* Table */
 .container-table {
 	margin-top: 20px;
 }
 
-.table th, .table td {
+
+.table td {
 	text-align: center;
+	font-weight: lighter;
+	font-size: 14px;
+}
+.table th{
+	text-align: center;
+	font-weight: bold;
+    font-size: 16px;
 }
 
-.upload-button, .download-button {
-	text-align: center;
-}
-
-/* Logout Section */
 .logged-in-section {
 	display: flex;
 	align-items: center;
@@ -141,7 +144,8 @@ table {
 	margin-top: -50px;
 }
 
-th, td {
+th,
+td {
 	border: 1px solid #333333;
 	padding: 8px;
 	text-align: center;
@@ -156,11 +160,8 @@ th {
 	margin-top: 20px;
 }
 
-.table th, .table td {
-	text-align: center;
-}
-
-.upload-button, .download-button {
+.table th,
+.table td {
 	text-align: center;
 }
 
@@ -187,4 +188,8 @@ th {
 
 .submit-link:hover {
 	text-decoration: underline;
+}
+.logout-button-color:hover{
+background-color: #FEFBF6;
+color:white;
 }

@@ -6,27 +6,24 @@
 <title>Login Form</title>
 <%@ include file="BootStrap/BootStrap_Link.jsp"%>
 <!-- <link href="CSS/Login.css" rel="stylesheet">-->
-<link href='https://fonts.googleapis.com/css?family=Mulish+SemiBold'
-	rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Mulish+SemiBold' rel='stylesheet'>
 
 <style>
+
 body {
 	background-color: #EEF5FF;
-	font-family: "Mulish SemiBold";
+    font-family: "Mulish SemiBold"; 
 }
-
-.card {
-	--bs-card-spacer-x: none;
-}
-
-.card-brand-name {
-	border-radius: 0;
-}
-
+.card{
+--bs-card-spacer-x:none;
+ }
+ .card-brand-name{
+ border-radius: 0;
+ }
 .img-responsive {
 	width: 250px;
 }
-
+		
 .brand-image {
 	margin-left: 0px;
 }
@@ -119,16 +116,16 @@ label {
 	border: none;
 	padding: 10px;
 	border-radius: 4px 0 0 4px;
+	
 }
 
-.input-group-text .fas {
+.input-group-text .fas 
+{
 	font-size: 1.3rem;
-	margin-top: -5px;
+	margin-top:-5px;
 }
 
-nav {
-	padding: 0;
-}
+ 
 </style>
 </head>
 <body>
@@ -137,17 +134,17 @@ nav {
 		<div class="card shadow card-brand-name">
 			<div class="card-body mb-3 mt-2">
 				<div class="container brand-image ">
-					<a class="navbar-brand " href="#"> <img src="image/img.png"
-						alt="ICICI Logo" class="img-responsive">
+					<a class="navbar-brand " href="#" > <img
+						src="image/img.png" alt="ICICI Logo" class="img-responsive">
 					</a>
 				</div>
 			</div>
 		</div>
 	</nav>
-
+	
 	<br>
 	<br>
-	<div class="card-body mt-5">
+	<div class="card-body">
 		<form action="login" method="post">
 			<div class="center-title mb-4"
 				style="flex-grow: 1; text-align: center;">
@@ -164,10 +161,9 @@ nav {
 							class="fas fa-user"></i></span>
 					</div>
 					<div>
-						<input type="text" class="form-control input-form-text"
-							name="ntid" placeholder="NT ID" id="ntid"
-							style="width: 150%; background-color: #EEF5FF;">
-					</div>
+					<input type="text" class="form-control input-form-text" name="ntid" placeholder="NT ID"
+						id="ntid" style="width:150%;background-color: #EEF5FF;">
+					</div>	
 				</div>
 			</div>
 
@@ -178,19 +174,17 @@ nav {
 							class="fas fa-lock"></i></span>
 					</div>
 					<div>
-						<input type="password" class="form-control input-form-text"
-							name="passwords" id="passwords" placeholder="Password"
-							style="width: 150%; background-color: #EEF5FF;">
-					</div>
+					<input type="password" class="form-control input-form-text"
+						name="passwords" id="passwords" placeholder="Password" style="width:150% ; background-color: #EEF5FF ;">
+				   </div>
 				</div>
 			</div>
 			<br>
 			<div class="text-center">
-				<button type="submit" class="btn text-white "
-					style="background-color: #000000;">Login</button>
+				<button type="submit" class="btn text-white btn-dark">Login</button>
 			</div>
 		</form>
 	</div>
-
+	
 </body>
 </html>

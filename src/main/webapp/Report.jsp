@@ -83,8 +83,6 @@
     <label>Show All Batches</label>
     <button>Show</button>
     </form>
-
 </div>
-
 </body>
 </html>

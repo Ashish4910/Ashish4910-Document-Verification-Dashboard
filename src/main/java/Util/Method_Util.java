@@ -2,7 +2,6 @@ package Util;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -19,11 +18,11 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
+
+import Dao.DatabaseUtil;
 import Dao.QueryUtil;
 import Java.EmployeeData;
 import Python.PythonData;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import Dao.DatabaseUtil;
 
 public class Method_Util {
 
@@ -35,6 +34,7 @@ public class Method_Util {
 				|| ("IPRU33333".equals(uemail) && "Ashish@123".equals(upwd));
 	}
 
+	
 	public static String getUserNameForDashboard(String email) {
 		String UserName = "";
 		try {
@@ -45,7 +45,7 @@ public class Method_Util {
 			ResultSet rs = psmt.executeQuery();
 			if (rs.next()) {
 				UserName = rs.getString(4);
-
+			
 				return UserName;
 			}
 
@@ -57,7 +57,9 @@ public class Method_Util {
 		return UserName;
 
 	}
-
+	
+	
+	
 	public static boolean isDuplicateEntry(Connection con, String email) {
 		try {
 			PreparedStatement pstmt = con.prepareStatement(QueryUtil.Method_Util_CHECK_DUPLICATE_USER_QUERY);
@@ -66,6 +68,7 @@ public class Method_Util {
 			if (rs.next()) {
 				int count = rs.getInt(1);
 				return count > 0;
+				
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -258,27 +261,22 @@ public class Method_Util {
 	private static void redirectToPage(String page, HttpServletResponse response) throws IOException {
 		response.sendRedirect(page);
 	}
-
 // ===============================Python_Search_Batch_Id_Download=============================================================
-	public static boolean python_checkIfBatchIdExists(Connection connection, String query, String batchId)
-			throws Exception {
-		try (PreparedStatement selectStmt = connection.prepareStatement(query)) {
-			selectStmt.setString(1, batchId);
-			try (ResultSet rs = selectStmt.executeQuery()) {
-				return rs.next();
+		public static boolean python_checkIfBatchIdExists(Connection connection, String query, String batchId) throws Exception {
+			try (PreparedStatement selectStmt = connection.prepareStatement(query)) {
+				selectStmt.setString(1, batchId);
+				try (ResultSet rs = selectStmt.executeQuery()) {
+					return rs.next();
+				}
 			}
 		}
-	}
-
 // ====================Java_Search_Batch_Id_Download==========================================================================
-	public static boolean java_checkIfBatchIdExists(Connection connection, String query, String batchId)
-			throws Exception {
-		try (PreparedStatement selectStmt = connection.prepareStatement(query)) {
-			selectStmt.setString(1, batchId);
-			try (ResultSet rs = selectStmt.executeQuery()) {
-				return rs.next();
-			}
-		}
+		  public static boolean java_checkIfBatchIdExists(Connection connection, String query, String batchId) throws Exception {
+		        try (PreparedStatement selectStmt = connection.prepareStatement(query)) {
+		            selectStmt.setString(1, batchId);
+		            try (ResultSet rs = selectStmt.executeQuery()) {
+		                return rs.next();
+		            }
+		        }
+		    }		
 	}
-
-}

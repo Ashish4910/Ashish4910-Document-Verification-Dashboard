@@ -14,7 +14,6 @@
     <script>
         // Display an alert with the error message
         alert('<%= errorMessage %>');
-        // Redirect to a desired page (e.g., Report.jsp)
         window.location.href = "Report.jsp";
     </script>
 <%

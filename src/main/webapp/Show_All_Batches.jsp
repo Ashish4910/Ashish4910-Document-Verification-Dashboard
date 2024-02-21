@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Show_All_Batches</title>
 <link rel="stylesheet" href="CSS/employee_dashboard.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -19,8 +19,8 @@
 <link rel="stylesheet" href="CSS/Show_All_Batches.css">
 <script src="Javascript/Dashboard.js"></script>
 </head>
+
 <body>
- 
 <!-- ===================================Logo and Other Details========================================================-->
 <nav>
     <div class="container d-flex justify-content-between align-items-center">
@@ -35,17 +35,17 @@
 
 <!-- =========================================LOGOUT============================================================== -->
 <%
- // Retrieve uemail from the session
- HttpSession currentsession = request.getSession();
- String uemail = (String) currentsession.getAttribute("uemail");
- // Check if uemail is not null before using it
- if (uemail != null) {
- %>
+// Retrieve uemail from the session
+HttpSession currentsession = request.getSession();
+String uemail = (String) currentsession.getAttribute("uemail");
+// Check if uemail is not null before using it
+if (uemail != null) {
+%>
    
    <div class="login-container">
 	    <span class="logged-in-as">Logged in as </span>
 	    <div class="user-info">
-	        <%= uemail %> |
+	        <%=uemail%> |
 	    </div>
 	    <button type="button" class="btn btn-primary logout-button" onclick="logout()">
 		    <i class="fa-solid fa-right-from-bracket fa-lg logout-icon"></i> Logout
@@ -64,18 +64,24 @@
  %>
 <!-- =========================================TABLE============================================================== -->
 <div class="table-container">
-    <table class="table">
+    <div class="table-scroll">
+        <table class="table">
+            <thead class="fixed-header">
          <tr>
             <th class="text">Id</th>
             <th class="text">Batches</th>
         </tr>
+        </thead>
+        <tbody>
         <% while (rs.next()){ %>
             <tr>
                 <td class="text-center"><b><%=rs.getString("id")%></b></td>
                 <td class="text-center"><b><%=rs.getString("batch_id")%></b></td>
             </tr>
         <% } %>
-    </table>
+        </tbody>
+       </table>
+    </div>
 </div>
 <%
 } catch (Exception e) {

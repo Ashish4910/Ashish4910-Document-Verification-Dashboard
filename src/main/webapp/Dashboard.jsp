@@ -174,8 +174,8 @@ td {
 </style>
 </head>
 <body>
-<h1>This is a Document Verification Dashboard project</h1>
-            <%
+
+				<%
 				// Retrieve uemail from the session
 				HttpSession currentsession = request.getSession();
 				String uemail = (String) currentsession.getAttribute("uemail");
@@ -186,7 +186,7 @@ td {
 
 				// Check if uemail is not null before using it
 				if (uemail != null) {
-		    %>
+				%>
           <nav class="mb-3 shadow">
 		<div class="card shadow card-brand-name">
 			<div

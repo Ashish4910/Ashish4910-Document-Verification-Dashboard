@@ -1,13 +1,8 @@
-@charset "ISO-8859-1";
-
-/*    ================ table font size ======= */
 body {
 	font-family: 'Arial', sans-serif;
 	font-size: 16px;
-
 }
 
-/* Logo and Other Details */
 nav {
 	padding: 0.5rem 0;
 	margin-left: -230px;
@@ -61,64 +56,45 @@ nav {
 	color: black;
 }
 
+#emailDisplay {
+	display: none;
+}
+
 .table {
-	border-collapse: collapse;
+	border-collapse: inherit;
 	border: 2px solid #000;
-	width: 90%;
-	margin-left: 70px;
+	width: 100%;
+	margin-left: 0px;
 }
 
 .table-scroll {
-	max-height: 373px;
+	max-height: 425px;
 	overflow-y: scroll;
+	overflow-x: hidden;
 	white-space: nowrap;
 }
 
 .table-container {
 	overflow-x: auto;
-	max-width: 100%;
-	padding: 10px;
+	max-width: 70%;
+	padding: 8px;
+	margin-left:220px;
 }
 
 .table td {
 	padding: 10px;
-	border: 1px solid #ccc;
+	border: 1px solid #000;
 	font-size: 12px;
-
+	font-weight: lighter;
+	text-align: center;
 }
 
 .table th {
 	border: 2px solid #000;
-	background-color: #D3D3D3;
 	padding: 10px;
 	font-size: 14px;
-
-}
-
-.button-container {
-	position: absolute;
-	bottom: 40px;
-	display: flex;
-	justify-content: flex-end;
-	width: 100%;
-	padding: 10px;
-}
-
-.btn-secondary {
-	background-color: #f37e20;
-}
-
-.button-container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin-top: 20px;
-}
-
-.btn {
-	position: relative;
-	padding: 5px 10px;
-	cursor: pointer;
+	font-weight: bold;
+	text-align: center;
 }
 
 .btn a {
@@ -140,23 +116,36 @@ nav {
 	background-color: #c82333;
 }
 
-.form-save,
-.form-reject {
-	display: flex;
-	align-items: center;
+.button-container {
+	text-align: center;
 }
 
 .download-btn {
-	margin-right: 10px;
-	margin-left: 490px;
+	background-color: #007bff;
+	color: #fff;
+	margin-left: 1230px;
+	margin-top: 10px;
 }
 
 .save-btn {
-	margin-right: -362px;
-	margin-left: 260px;
+	color: #fff;
+	margin-left: 970px;
+	margin-top: -53px;
 }
 
 .reject-btn {
-	margin-left: 44px;
-	margin-right: 50px;
+	background-color: #dc3545;
+	color: #fff;
+	margin-top: -100px;
+	margin-left: 710px;
+}
+
+.table-scroll thead th {
+	position: sticky;
+	top: 0;
+	background-color: #f2f2f2;
+	width: 170px;
+	font-size: 13px;
+	z-index: 1;
+	border: 1px solid #000;
 }

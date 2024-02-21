@@ -1,146 +1,92 @@
-@charset "ISO-8859-1";
-
-
 body {
-	font-family: Arial, sans-serif;
-
+	background-color: #FEFBF6;
+	font-family: "Mulish SemiBold";
 }
 
-/* Logo and Other Details */
-nav {
-	padding: 0.5rem 0;
-	margin-left: -230px;
-	margin-bottom: 0;
-	background-color: white;
+.img-responsive {
+	width: 250px;
 }
 
-.logo-img {
-	margin-right: 30px;
-	width: 190px;
-	height: 50px;
+.brand-image {
+	margin-left: 0px;
 }
 
-.dashboard-heading {
-	padding-right: 470px;
-	font-size: 25px;
-	font-weight: bold;
+.card {
+	--bs-card-spacer-x: none;
 }
 
-.login-container {
-	display: flex;
-	align-items: center;
-	position: absolute;
-	top: 15px;
-	font-size: 13px;
-	right: 10px;
+.card-brand-name {
+	border-radius: 0;
 }
 
-.logged-in-as {
-	margin-right: 5px;
-	margin-top: 3px;
+.card.shadow {
+	background-color: #FFFFFF;
 }
 
-.user-info {
-	color: black;
-	margin-top: 3px;
-	font-weight: bold;
-	font-size: 13px;
+.nav-link {
+	color: white;
+	font-size: 20px;
 }
 
-.logout-button {
-	color: black;
-	background-color: white;
-	border-color: white;
-	font-weight: bold;
-	font-size: 13px;
-	margin-top: 3px;
+.nav-link:hover {
+	color: orange;
 }
 
-.logout-icon {
-	color: black;
+.custom-size {
+	font-size: 2.5em;
 }
 
-.dashboard-button {
-	color: black;
-	background-color: white;
-	border-color: white;
-	font-weight: bold;
-	font-size: 13px;
-}
-
-.button1-style {
-	margin-top: -142px;
-	margin-left: 692px;
-}
-
-.button2-style {
-	margin-top: -190px;
-	margin-left: 780px;
-}
-
-.button3-style {
-	margin-top: -239px;
-	margin-left: 883px;
-}
-
-.container-logo {
-	display: flex;
-	justify-content: between;
-	align-items: center;
-}
-
-.navbar-brand img {
-	margin-right: 30px;
-}
-
-.title {
-	padding-right: 470px;
-	font-size: 25px;
-	font-weight: bold;
-}
-
-/* Logout Section */
-.logged-in-section {
-	display: flex;
-	align-items: center;
-	position: absolute;
-	top: 15px;
-	right: 10px;
-}
-
-
-/* Container for the entire table */
-.table-container {
-	max-height: 300px;
-	overflow-y: scroll;
+.logout-button-color {
+	border-color: coral;
 }
 
 /* Optional: Adjustments for table layout */
-.Container {
-	width: 80%;
-	margin-left: 200px;
+.table {
+	--bs-table-bg: none;
+}
+
+.container table.table thead {
+	background-color: #2E4374;
+}
+
+/* Table */
+.container-table {
+	margin-top: 20px;
+}
+
+.table th, .table td {
+	text-align: center;
+}
+
+table {
 	border-collapse: collapse;
+	width: 100%;
+	margin: 20px auto;
 }
 
-.Container th {
+th, td {
+	border: 1px solid #333333;
 	padding: 8px;
-	border: 2px solid #000000;
-	/* Adjust border styles as needed */
-	text-align: left;
+	text-align: center;
+}
+
+th {
 	background-color: #f2f2f2;
-	/* Set header background color as needed */
+	font-size: 15px;
 }
 
-.Container td {
-	padding: 8px;
-	border: 1px solid #000000;
-	/* Adjust border styles as needed */
-	text-align: left;
-
+td {
+	font-size: 14px;
 }
+
 
 /* Disabled button styles */
 .action-button:disabled {
 	background-color: #000000;
 	cursor: not-allowed;
+}
+
+.logout-button-color:hover{
+background-color: #FEFBF6;
+color:white;
 }

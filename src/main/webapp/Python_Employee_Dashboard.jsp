@@ -51,7 +51,7 @@
         if (uemail != null) {
     %>
 
-    <div class="login-container">
+     <div class="login-container">
 	    <span class="logged-in-as">Logged in as </span>
 	    <div class="user-info">
 	        <%= uemail %> |
@@ -85,12 +85,15 @@ try {
 <div class="table-container">
     <div class="table-scroll">
         <table class="table">
-            <tr>
+            <thead>
+              <tr>
                 <th class="text">Employee ID</th>
                 <th class="text">Employee Name</th>
                 <th class="text">Employee Location</th>	
                 <th class="text">Employee Gender</th>
-            </tr>
+             </tr>
+            </thead>
+            <tbody>
             <%
             if (uploadedData_1 != null) {
                 for (PythonData employee : uploadedData_1) {
@@ -105,9 +108,12 @@ try {
                 }
             }
             %>
+            </tbody>
         </table>
     </div>
 </div>
+
+
 <%
     // Close the database connection
     con.close();
@@ -123,8 +129,8 @@ try {
 %>
 
 <div class="button-container">
-    <button type="button" class="btn btn-primary download-btn">
-        <a href="<%=downloadLink %>">Download Sample File</a>
+    <button type="button" class="btn btn-primary btn-sm download-btn">
+        <a href="<%=downloadLink %>">Download</a>
         <i class="fas fa-download"></i>
     </button>
 <%
@@ -133,7 +139,7 @@ try {
 }
 %>
    <form method="post" action="Python_Final_Save" class="form-save">
-        <button type="submit" class="btn btn-primary save-btn" onclick="generateAndSetBatchId()">
+        <button type="submit" class="btn btn-primary btn-sm save-btn" onclick="generateAndSetBatchId()">
             Final Save <i class="fas fa-upload"></i>
         </button>
         <input type="hidden" id="batchId" name="batchId">
@@ -141,7 +147,7 @@ try {
         
     
     <form method="post" action="Python_Reject_Batch" id="rejectForm" class="form-reject">
-        <button type="submit" class="btn btn-danger reject-btn" onclick="confirmAndSubmit()">
+        <button type="submit" class="btn btn-danger btn-sm reject-btn" onclick="confirmAndSubmit()">
             Reject Batch
         </button>
     </form>
