@@ -1,3 +1,4 @@
+<%@page import="Dao.DatabaseUtil"%>
 <%@page import="Util.Method_Util"%>
 <%@page import="java.io.PrintWriter"%>
 <%@page import="java.sql.*"%>
@@ -15,10 +16,8 @@
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
 	rel="stylesheet">
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
-<link href='https://fonts.googleapis.com/css?family=Mulish+SemiBold'
-	rel='stylesheet'>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Mulish+SemiBold' rel='stylesheet'>
 <!-- <link rel="stylesheet" href="CSS/Dashboard.css"> -->
 <script src="Javascript/Dashboard.js"></script>
 <style>
@@ -47,6 +46,7 @@ body {
 .card.shadow {
 	background-color: #FFFFFF;
 }
+
 
 /* Table */
 .container-table {
@@ -103,6 +103,7 @@ td {
 	font-size: 16px;
 }
 
+
 .nav-link {
 	color: white;
 	font-size: 20px;
@@ -126,6 +127,11 @@ td {
 
 .logout-button-color {
 	border-color: coral;
+}
+
+.logout-button-color:hover {
+	background-color: #FEFBF6;
+	color: white;
 }
 
 .custom-table, .custom-table tbody, .custom-table thead tr,
@@ -168,16 +174,6 @@ td {
 </style>
 </head>
 <body>
-<label>we love doing work</label>
-	<nav class="mb-3 shadow">
-		<div class="card shadow card-brand-name">
-			<div
-				class="card-body mb-3 mt-2 d-flex justify-content-between align-items-center ">
-				<div class="container brand-image">
-					<a class="navbar-brand" href="#"> <img src="image/img.png"
-						alt="ICICI Logo" class="img-responsive">
-					</a>
-				</div>
 
 				<%
 				// Retrieve uemail from the session
@@ -191,9 +187,17 @@ td {
 				// Check if uemail is not null before using it
 				if (uemail != null) {
 				%>
-
+          <nav class="mb-3 shadow">
+		<div class="card shadow card-brand-name">
+			<div
+				class="card-body mb-3 mt-2 d-flex justify-content-between align-items-center ">
+				<div class="container brand-image">
+					<a class="navbar-brand" href="#"> <img src="image/img.png"
+						alt="ICICI Logo" class="img-responsive">
+					</a>
+				</div>
+				
 				<div class="d-flex align-items-center gap-3">
-					<!-- <a href="#" class="text-dark mr-1"> -->
 					<i class="fas fa-user-circle custom-size"></i>
 					<%
 					if (UserName.length() <= 20) {
@@ -210,8 +214,7 @@ td {
 					<%
 					}
 					%>
-					<%-- </a> <span class="text-muted mr-3"><%=UserName%> |<br><%=uemail%></span> --%>
-					<button onclick="logout()" class="text-dark logout-button-color">
+					<button onclick="logout()" class="logout-button-color">
 						<i class="fas fa-sign-out-alt fa-2x" style="color: maroon;"></i>
 					</button>
 				</div>
@@ -222,7 +225,7 @@ td {
 
 	<nav class="navbar navbar-expand-lg bg-maroon"
 		style="background-color: maroon; padding: .5rem 0;">
-		<div class="container-fluid ">
+		<div class="container-fluid">
 			<button class="navbar-toggler" type="button"
 				data-bs-toggle="collapse" data-bs-target="#navbarNav"
 				aria-controls="navbarNav" aria-expanded="false"
@@ -230,7 +233,7 @@ td {
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div
-				class="collapse navbar-collapse justify-content-center text-center "
+				class="collapse navbar-collapse justify-content-center text-center"
 				id="navbarNav">
 				<ul class="navbar-nav" style="line-height: 1;">
 					<li class="nav-item"><a href="#"
@@ -246,21 +249,75 @@ td {
 			</div>
 		</div>
 	</nav>
-
-
 	<%
 	} else if (ntidFromDatabase != null) {
+		
+		Connection conn = null;
+        PreparedStatement selectUserPstmt = null;
+        ResultSet resultSet = null;
+        String username = null;
+
+        try {
+            // Get a connection from the DatabaseUtil class
+            conn = DatabaseUtil.getConnection();
+
+            // Prepare the SQL statement to retrieve the username based on ntid
+            String sql = "SELECT name FROM [user] WHERE ntid = ?";
+            selectUserPstmt = conn.prepareStatement(sql);
+            selectUserPstmt.setString(1, ntidFromDatabase);
+
+            // Execute the query
+            resultSet = selectUserPstmt.executeQuery();
+
+            // Check if a record is found
+            if (resultSet.next()) {
+                // Retrieve the username from the result set
+                username = resultSet.getString("name");
+            }
+        } catch (SQLException e) {
+            // Handle SQL exceptions
+            e.printStackTrace();
+        } finally {
+            // Close resources in the finally block
+            // ...
+        }
 	%>
+	
+<nav class="">
+		<div class="card shadow card-brand-name">
+			<div
+				class="card-body mb-3 mt-2 d-flex justify-content-between align-items-center ">
+				<div class="container brand-image">
+					<a class="navbar-brand" href="#"> <img src="image/img.png"
+						alt="ICICI Logo" class="img-responsive">
+					</a>
+				</div>
+				
+				<div class="d-flex align-items-center gap-3">
+					<i class="fas fa-user-circle custom-size"></i>
+					<%
+					if (UserName.length() <= 20) {
+					%>
+					<span class="text-muted mr-3"
+						style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"
+						title="<%=username%>"><%=username%> <br> <%=ntidFromDatabase%></span>
+					<%
+					} else {
+					%>
+					<span class="text-muted mr-3"
+						style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;"
+						title="<%=username%>"><%=username%> <br><%=ntidFromDatabase%></span>
+					<%
+					}
+					%>
+					<button onclick="logout()" class="logout-button-color">
+						<i class="fas fa-sign-out-alt fa-2x" style="color: maroon;"></i>
+					</button>
+				</div>
 
-	<div class="d-flex align-items-center">
-		<a href="#" class="text-dark mr-1"> <i
-			class="fas fa-user-circle custom-size"></i>
-		</a> <span class="text-muted mr-3"><%=ntidFromDatabase%></span> <a
-			href="Login.jsp" class="text-dark"> <i
-			class="fas fa-sign-out-alt fa-2x" style="color: maroon;"></i>
-		</a>
-	</div>
-
+			</div>
+		</div>
+</nav>
 	<%
 	} else {
 	// Handle the case where uemail is null (e.g., redirect to login)
@@ -268,13 +325,10 @@ td {
 	}
 	%>
 
-
-
-
+	
 	<!-- ===================================Table========================================================-->
 	<div class="container p-4">
-		<table
-			class="table custom-table table100-body js-pscroll ps--active-y">
+		<table class="table custom-table table100-body">
 			<thead>
 				<tr>
 					<th class="text-white">Id</th>

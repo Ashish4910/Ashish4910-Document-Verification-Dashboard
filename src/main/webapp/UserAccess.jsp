@@ -10,6 +10,7 @@
 <html>
 <head>
 <title>UserAccess</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <link
@@ -300,7 +301,7 @@ label {
 					</div>
 					<div>
 						<input type="text" class="form-control input-form-text"
-							name="ntid" placeholder="User Name" id="ntid"
+							name="name" placeholder="User Name" id="name"
 							style="width: 150%; background-color: #EEF5FF;">
 					</div>
 				</div>
@@ -320,30 +321,50 @@ label {
 					</div>
 				</div>
 			</div>
-
-
-
-			<div class="form-group passwords mt-3">
-
-				<div class="input-group d-flex">
+			 
+			 <div class="form-group passwords mt-3">
+			    <div class="input-group d-flex">
 					<div class="input-group-prepend mt-3">
 						<span class="input-group-text fa-white-bg"><i
 							class="fa-solid fa-briefcase fa-lg" style="color: #000000;"></i></span>
 					</div>
 					<div>
 						<input type="text" class="form-control input-form-text"
-							name="job_title" placeholder="Job Title"
+							name="job_title" id="job_title" placeholder="Job Title"
 							style="width: 150%; background-color: #EEF5FF;">
 					</div>
 				</div>
 			</div>
+
+
+
+						<input type="hidden" class="form-control input-form-text" name="ntid" id="ntid_input">
+					
 			<br>
 			<div class="text-center">
-				<button type="submit" class="btn text-white "
+				<button type="submit" class="btn text-white" onclick="generateAndShowID()"
 					style="background-color: #000000;">Add</button>
 			</div>
 		</form>
 	</div>
+ <script>
+    // Function to generate a random number
+    function generateRandomNumber() {
+        return Math.floor(Math.random() * 90000) + 10000; // Generate a 5-digit random number
+    }
 
+    // Function to generate a unique ID
+    function generateUniqueID() {
+        return "IPRU" + generateRandomNumber(); // Concatenate "IPRU" with the random number
+    }
+
+    // Function to generate and show the unique ID in an alert
+    function generateAndShowID() {
+        var uniqueID = generateUniqueID(); // Generate the unique ID
+        alert("Generated Unique ID: " + uniqueID); // Show the unique ID in an alert
+        document.getElementById("ntid_input").value = uniqueID; // Set the generated ID to the hidden input field
+      
+    }
+</script>
 </body>
 </html>

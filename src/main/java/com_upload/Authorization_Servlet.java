@@ -20,10 +20,11 @@ public class Authorization_Servlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         PrintWriter out = response.getWriter();
-        String ntid = request.getParameter("ntid");
+        String ntid  = request.getParameter("ntid");
+        String name = request.getParameter("name");
         String passwords = request.getParameter("passwords");
         String jobTitle = request.getParameter("job_title");
-
+        
         Connection conn = null;
         PreparedStatement selectPstmt = null;
         PreparedStatement insertUserPstmt = null;
@@ -39,16 +40,18 @@ public class Authorization_Servlet extends HttpServlet {
             selectPstmt.setString(1, ntid);
             resultSet = selectPstmt.executeQuery();
 
-            if (resultSet.next() || "morevinayak1998@gmail.com".equals(ntid)
-                    || "sumit123@gmail.com".equals(ntid) || "ashish2001@gmail.com".equals(ntid)) {
+            if (resultSet.next() || "IPRU11111".equals(ntid)
+                    || "IPRU22222".equals(ntid) || "IPRU33333".equals(ntid)) {
                 // Email ID already exists
                 out.print("<script>alert('Authorization Failed! Duplicate email ID.'); window.location.href='UserAccess.jsp';</script>");
             } else {
                 // Email ID does not exist, proceed with the insertion into ems.user
-                insertUserPstmt = conn.prepareStatement(QueryUtil.Authorization_Servlet_Insert_USER_QUERY);
-                insertUserPstmt.setString(1, ntid);
+                
+            	insertUserPstmt = conn.prepareStatement(QueryUtil.Authorization_Servlet_Insert_USER_QUERY);
+                insertUserPstmt.setString(1, name);
                 insertUserPstmt.setString(2, passwords);
                 insertUserPstmt.setString(3, jobTitle);
+                insertUserPstmt.setString(4, ntid);	
 
                 // Execute the insert query for ems.user
                 int resultUser = insertUserPstmt.executeUpdate();
@@ -56,9 +59,10 @@ public class Authorization_Servlet extends HttpServlet {
                 if (resultUser > 0) {
                     // Insert into user_access table
                     insertUserAccessPstmt = conn.prepareStatement(QueryUtil.Authorization_Servlet_Insert_USERACCESS_QUERY);
-                    insertUserAccessPstmt.setString(1, ntid);
+                    insertUserAccessPstmt.setString(1, name);
                     insertUserAccessPstmt.setString(2, passwords);
                     insertUserAccessPstmt.setString(3, jobTitle);
+                    insertUserAccessPstmt.setString(4, ntid );
 
                     // Execute the insert query for user_access
                     int resultUserAccess = insertUserAccessPstmt.executeUpdate();
