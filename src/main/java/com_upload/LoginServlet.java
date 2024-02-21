@@ -35,6 +35,7 @@ public class LoginServlet extends HttpServlet {
 
 			PreparedStatement pstmt1 = con.prepareStatement(QueryUtil.LoginServlet_SELECT_USER_ACCESS_QUERY);
 			pstmt1.setString(1, uemail);
+			pstmt1.setString(2, upwd);
 			ResultSet rs = pstmt1.executeQuery();
 
 			if (rs.next()) {
