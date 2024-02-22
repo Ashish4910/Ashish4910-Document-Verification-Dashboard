@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 
 public class DatabaseUtil {
 
-	private static final String DATABASE_URL = "jdbc:sqlserver://DESKTOP-T1D9FVI\\SQLEXPRESS;databaseName=ems;encrypt=false;";
+	private static final String DATABASE_URL = "jdbc:sqlserver://enter your database connector path;databaseName=ems;encrypt=false;";
 	private static final String DATABASE_USERNAME = "root";
 	private static final String DATABASE_PASSWORD = "dvd@123";
 
