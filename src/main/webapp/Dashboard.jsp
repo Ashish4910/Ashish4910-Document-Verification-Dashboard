@@ -16,8 +16,10 @@
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
 	rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
-<link href='https://fonts.googleapis.com/css?family=Mulish+SemiBold' rel='stylesheet'>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Mulish+SemiBold'
+	rel='stylesheet'>
 <!-- <link rel="stylesheet" href="CSS/Dashboard.css"> -->
 <script src="Javascript/Dashboard.js"></script>
 <style>
@@ -46,7 +48,6 @@ body {
 .card.shadow {
 	background-color: #FFFFFF;
 }
-
 
 /* Table */
 .container-table {
@@ -102,7 +103,6 @@ th {
 td {
 	font-size: 16px;
 }
-
 
 .nav-link {
 	color: white;
@@ -174,20 +174,20 @@ td {
 </style>
 </head>
 <body>
-<label>Demo Try for change name </label>
-				<%
-				// Retrieve uemail from the session
-				HttpSession currentsession = request.getSession();
-				String uemail = (String) currentsession.getAttribute("uemail");
-				String ntidFromDatabase = (String) currentsession.getAttribute("ntidFromDatabase");
 
-				Method_Util method_Util = new Method_Util();
-				String UserName = method_Util.getUserNameForDashboard(uemail);
+	<%
+	// Retrieve uemail from the session
+	HttpSession currentsession = request.getSession();
+	String uemail = (String) currentsession.getAttribute("uemail");
+	String ntidFromDatabase = (String) currentsession.getAttribute("ntidFromDatabase");
 
-				// Check if uemail is not null before using it
-				if (uemail != null) {
-				%>
-          <nav class="mb-3 shadow">
+	Method_Util method_Util = new Method_Util();
+	String UserName = method_Util.getUserNameForDashboard(uemail);
+
+	// Check if uemail is not null before using it
+	if (uemail != null) {
+	%>
+	<nav class="mb-3 shadow">
 		<div class="card shadow card-brand-name">
 			<div
 				class="card-body mb-3 mt-2 d-flex justify-content-between align-items-center ">
@@ -196,7 +196,7 @@ td {
 						alt="ICICI Logo" class="img-responsive">
 					</a>
 				</div>
-				
+
 				<div class="d-flex align-items-center gap-3">
 					<i class="fas fa-user-circle custom-size"></i>
 					<%
@@ -251,39 +251,39 @@ td {
 	</nav>
 	<%
 	} else if (ntidFromDatabase != null) {
-		
-		Connection conn = null;
-        PreparedStatement selectUserPstmt = null;
-        ResultSet resultSet = null;
-        String username = null;
 
-        try {
-            // Get a connection from the DatabaseUtil class
-            conn = DatabaseUtil.getConnection();
+	Connection conn = null;
+	PreparedStatement selectUserPstmt = null;
+	ResultSet resultSet = null;
+	String username = null;
 
-            // Prepare the SQL statement to retrieve the username based on ntid
-            String sql = "SELECT name FROM [user] WHERE ntid = ?";
-            selectUserPstmt = conn.prepareStatement(sql);
-            selectUserPstmt.setString(1, ntidFromDatabase);
+	try {
+		// Get a connection from the DatabaseUtil class
+		conn = DatabaseUtil.getConnection();
 
-            // Execute the query
-            resultSet = selectUserPstmt.executeQuery();
+		// Prepare the SQL statement to retrieve the username based on ntid
+		String sql = "SELECT name FROM [user] WHERE ntid = ?";
+		selectUserPstmt = conn.prepareStatement(sql);
+		selectUserPstmt.setString(1, ntidFromDatabase);
 
-            // Check if a record is found
-            if (resultSet.next()) {
-                // Retrieve the username from the result set
-                username = resultSet.getString("name");
-            }
-        } catch (SQLException e) {
-            // Handle SQL exceptions
-            e.printStackTrace();
-        } finally {
-            // Close resources in the finally block
-            // ...
-        }
+		// Execute the query
+		resultSet = selectUserPstmt.executeQuery();
+
+		// Check if a record is found
+		if (resultSet.next()) {
+			// Retrieve the username from the result set
+			username = resultSet.getString("name");
+		}
+	} catch (SQLException e) {
+		// Handle SQL exceptions
+		e.printStackTrace();
+	} finally {
+		// Close resources in the finally block
+		// ...
+	}
 	%>
-	
-<nav class="">
+
+	<nav class="">
 		<div class="card shadow card-brand-name">
 			<div
 				class="card-body mb-3 mt-2 d-flex justify-content-between align-items-center ">
@@ -292,7 +292,7 @@ td {
 						alt="ICICI Logo" class="img-responsive">
 					</a>
 				</div>
-				
+
 				<div class="d-flex align-items-center gap-3">
 					<i class="fas fa-user-circle custom-size"></i>
 					<%
@@ -317,7 +317,7 @@ td {
 
 			</div>
 		</div>
-</nav>
+	</nav>
 	<%
 	} else {
 	// Handle the case where uemail is null (e.g., redirect to login)
@@ -325,7 +325,7 @@ td {
 	}
 	%>
 
-	
+
 	<!-- ===================================Table========================================================-->
 	<div class="container p-4">
 		<table class="table custom-table table100-body">
